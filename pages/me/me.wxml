@@ -1,0 +1,2 @@
+<!--pages/me/me.wxml-->
+<button open-type="getUserInfo" lang ="zh_CN"bindgetuserinfo="onGotUsertInfo"> 登录</button>
