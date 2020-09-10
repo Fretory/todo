@@ -7,6 +7,7 @@ App({
     })
   },
   globalData:{
-    userInfo:{}
+    userInfo:{},
+    openid:""
   }
 })

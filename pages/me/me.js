@@ -4,6 +4,7 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
+    openid:""
   },
   //事件处理函数
   bindViewTap: function() {
@@ -48,11 +49,19 @@ Page({
     })
   },
   onGotUsertInfo:function(e){
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+    const that=this
+    wx.cloud.callFunction({
+      name:"login",
+      success:res=>{
+        
+        that.setData({
+          userInfo: e.detail.userInfo,
+          hasUserInfo: true,
+          openid:res.result.openid
+        })
+        app.globalData.userInfo = e.detail.userInfo
+        app.globalData.openid=res.result.openid
+      }
     })
   }
 })
