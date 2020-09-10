@@ -1,3 +1,11 @@
-<!--pages/me/me.wxml-->
-<button open-type="getUserInfo" lang ="zh_CN"bindgetuserinfo="onGotUsertInfo"> 登录</button>
-<view> {{openid}} </view>
+<!-- pages/me/me.wxml -->
+<view class="container">
+  <view wx:if="{{hasUserInfo == true}}" class="profile-info">
+    <image  class="avatar" src="{{userInfo.avatarUrl}}"></image>
+  </view>
+  <view wx:else="{{hasUserInfo == false}}" class="user-login"> 
+    <button open-type="getUserInfo" lang ="zh_CN" bindgetuserinfo="onGotUsertInfo">立即登录</button>
+    <view> {{openid}} </view>
+  </view>
+
+</view>
