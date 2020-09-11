@@ -3,7 +3,8 @@
     "pages/me/me",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/haveDone/haveDone"
+    "pages/haveDone/haveDone",
+    "pages/egg/egg"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,19 +17,20 @@
       {
         "pagePath": "pages/index/index",
         "text": "待做",
-        "iconPath":"images/tabBar/todo.png",
-        "selectedIconPath":"images/tabBar/todo_selected.png"
-      },{
+        "iconPath": "images/tabBar/todo.png",
+        "selectedIconPath": "images/tabBar/todo_selected.png"
+      },
+      {
         "pagePath": "pages/haveDone/haveDone",
         "text": "已做",
-        "iconPath":"images/tabBar/done.png",
-        "selectedIconPath":"images/tabBar/done_selected.png"
+        "iconPath": "images/tabBar/done.png",
+        "selectedIconPath": "images/tabBar/done_selected.png"
       },
       {
         "pagePath": "pages/me/me",
         "text": "我的",
-        "iconPath":"images/tabBar/me.png",
-        "selectedIconPath":"images/tabBar/me_selected.png"
+        "iconPath": "images/tabBar/me.png",
+        "selectedIconPath": "images/tabBar/me_selected.png"
       }
     ]
   },
