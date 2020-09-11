@@ -1,11 +1,34 @@
 <!-- pages/me/me.wxml -->
 <view class="container">
-  <view wx:if="{{hasUserInfo == true}}" class="profile-info">
-    <image  class="avatar" src="{{userInfo.avatarUrl}}"></image>
-  </view>
-  <view wx:else="{{hasUserInfo == false}}" class="user-login"> 
-    <button open-type="getUserInfo" lang ="zh_CN" bindgetuserinfo="onGotUsertInfo">立即登录</button>
-    <view> {{openid}} </view>
-  </view>
+	<view wx:if="{{hasUserInfo == true}}" class="profile-info">
+		<image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+	</view>
+	<view wx:else="{{hasUserInfo == false}}" class="user-login">
+		<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUsertInfo">立即登录</button>
+	</view>
+	<!-- 成功动画 -->
+	<mp-dialog title="登录成功" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
 
+		<view class="container-face">
+			<view wx:if="{{hasUserInfo == true}}" class="success-box">
+				<view class="face">
+					<view class="eye"></view>
+					<view class="eye right"></view>
+					<view class="mouth happy"></view>
+				</view>
+				<view class="shadow scale"></view>
+			</view>
+
+			<!-- 失败动画 -->
+			<view wx:else="{{hasUserInfo == false}}" class="error-box">
+				<view class="face2">
+					<view class="eye"></view>
+					<view class="eye right"></view>
+					<view class="mouth sad"></view>
+				</view>
+				<view class="shadow move"></view>
+			</view>
+		</view>
+
+	</mp-dialog>
 </view>
