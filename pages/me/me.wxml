@@ -1,13 +1,24 @@
 <!-- pages/me/me.wxml -->
 <view class="container">
+
+
+
 	<view wx:if="{{hasUserInfo == true}}" class="profile-info">
 		<image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+		<p class="userinfo-nickname">{{userInfo.nickName}}</p>
+
+		<view id="clock">
+			<p class="date">{{ date }}</p>
+			
+			<p class="time">{{ time }}</p>
+		</view>
+
 	</view>
 	<view wx:else="{{hasUserInfo == false}}" class="user-login">
 		<button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUsertInfo">立即登录</button>
 	</view>
 	<!-- 成功动画 -->
-	<mp-dialog title="登录成功" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+	<mp-dialog title="{{loginStatus}}" show="{{showOneButtonDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}" extClass="dialog-color">
 
 		<view class="container-face">
 			<view wx:if="{{hasUserInfo == true}}" class="success-box">
@@ -31,4 +42,7 @@
 		</view>
 
 	</mp-dialog>
+</view>
+
+<view class="cell-container">
 </view>
