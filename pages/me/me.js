@@ -12,7 +12,7 @@ Page({
     oneButton: [{
       text: 'OK'
     }],
-    loginStatus: "登录失败"
+    loginStatus: "登录失败",
   },
   //事件处理函数
   bindViewTap: function () {
@@ -22,7 +22,7 @@ Page({
   },
   onGotUsertInfo: function (e) {
     const that = this
-    console.log(e.detail.userInfo.nickName)
+    console.log(e.detail.userInfo)
 
     wx.cloud.callFunction({
       name: "login",
@@ -68,13 +68,30 @@ Page({
       dialogShow: false,
       showOneButtonDialog: false
     })
-  }
+  },
+  quitLogin: function (e) {
+
+    const that =this
+
+    this.setData({
+      dialogShow: false,
+      time: '',
+      date: '',
+      userInfo: {},
+      hasUserInfo: false,
+      openid: "",
+      dialogShow: false,
+      showOneButtonDialog: false,
+
+    })
+  },
+
 })
 
 function zeroPadding(num, digit) {
   var zero = '';
-  for(var i = 0; i < digit; i++) {
-      zero += '0';
+  for (var i = 0; i < digit; i++) {
+    zero += '0';
   }
   return (zero + num).slice(-digit);
 }

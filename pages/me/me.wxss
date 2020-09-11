@@ -32,7 +32,7 @@ page {
   box-shadow: red;
   border-width: 0rpx;
   position: relative;
-  border-radius: 0 0 120rpx 120rpx;
+  border-radius: 0 0 120rpx 0rpx;
   box-shadow: 10rpx 20rpx 50rpx 10rpx rgba(85, 85, 85, 0.10);
 }
 
@@ -104,10 +104,27 @@ page {
 
 }
 
+
+
 .cell-container {
   width: 100%;
-  height: 100%;
+  position: relative;
+  top: 60rpx;
+  border-radius: 60rpx;
+  border-color: #EA5149;
+}
+.cells-container{
+  background-color: #EA5149;
+}
 
+.warnButton{
+  position: relative;
+  top: 80rpx;
+}
+
+.buttonContainer{
+  position: relative;
+  top: 90rpx;
 }
 
 /* 时钟 */
