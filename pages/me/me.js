@@ -1,5 +1,5 @@
 const app = getApp()
-import addNewTodo from "../../utils/dbOperations"
+var dbHelper=require ("../../utils/dbOperations")
 
 Page({
   data: {
@@ -22,7 +22,7 @@ Page({
     })
   },
   test: function () {
-    var original = addNewTodo("233333")
+    var original = dbHelper.queryTodosUndone(this.openid)
     var cast = Promise.resolve(original);
     cast.then(function (value) {
       console.log(value)

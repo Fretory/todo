@@ -11,14 +11,30 @@ let addNewTodo = function (todos) {
       success: (res) => {
         let result = res._id;
         console.log(result)
-        resolve(result);
+        Promise.resolve(result);
       },
-
       fail: () => {
-        reject("系统异常，请重试！")
+        Promise.reject("系统异常，请重试！")
       }
-
     })
   })
 }
-export default addNewTodo;
+
+let queryTodosUndone = function (userOpenID) {
+  todoDB.where({
+    _openid: userOpenID,
+    done: false
+  }).get({
+    success: (result) => {
+      console.log(result)
+      Promise.resolve(result.data);
+    },
+    fail: () => {
+      reject("系统异常，请重试！")
+    }
+  })
+}
+module.exports = {
+  addNewTodo: addNewTodo,
+  queryTodosUndone: queryTodosUndone
+}
