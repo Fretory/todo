@@ -1,4 +1,5 @@
 const app = getApp()
+import addNewTodo from "../../utils/dbOperations"
 
 Page({
   data: {
@@ -15,15 +16,23 @@ Page({
     loginStatus: "登录失败",
   },
   //事件处理函数
-  bindViewTap: function () {
+  egg: function () {
     wx.navigateTo({
-      url: '../logs/logs'
+      url: '../egg/egg'
     })
+  },
+  test: function () {
+    var original = addNewTodo("233333")
+    var cast = Promise.resolve(original);
+    cast.then(function (value) {
+      console.log(value)
+      //这里放异步的请求
+      //例如增加一个记录
+    });
+  
   },
   onGotUsertInfo: function (e) {
     const that = this
-    console.log(e.detail.userInfo)
-
     wx.cloud.callFunction({
       name: "login",
       success: res => {
@@ -71,7 +80,7 @@ Page({
   },
   quitLogin: function (e) {
 
-    const that =this
+    const that = this
 
     this.setData({
       dialogShow: false,
