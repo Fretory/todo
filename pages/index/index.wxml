@@ -1,13 +1,109 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view class="page-body">
+    <form catchsubmit="formSubmit" catchreset="formReset">
+
+      <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+       <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+             <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+             <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+             <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+             <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+             <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+
+       <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+
+       <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+
+       <view class="card card-2">
+        <text class="card-text">今天打10场比赛</text>
+        <view class="card-button">
+            <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
+        </view>
+        <view class="card-button2">
+            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+        </view>
+      </view>
+            
+    </form>
+    <view class="blank"></view>
+<view class="inputView" >
+<input class="input" placeholder="添加事务" placeholder-style="color: pink" />
+<view class="card-button3">
+<cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
 </view>
+</view>
+</view>
+
+

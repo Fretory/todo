@@ -33,8 +33,8 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.12.2",
-	"appid": "wx4b81a985e111c257",
-	"projectname": "FTodo",
+	"appid": "wxce3633fe438a958e",
+	"projectname": "Todo",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
