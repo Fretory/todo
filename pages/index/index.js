@@ -1,7 +1,6 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
 Page({
   data: {
     motto: 'Hello World',
@@ -50,5 +49,25 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  onLoad: function(){
+    this.setData({
+        slideButtons: [{
+          text: '普通',
+          src: '/images/index/have_done.png', // icon的路径
+        },{
+          text: '普通',
+          extClass: 'test',
+          src: '/images/index/have_done.png', // icon的路径
+        },{
+          type: 'warn',
+          text: '警示',
+          extClass: 'test',
+            src: '/images/index/have_done.png', // icon的路径
+        }],
+    });
+},
+slideButtonTap(e) {
+    console.log('slide button tap', e.detail)
+}
 })

@@ -1,21 +1,121 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+.page-body
+{
+  flex-direction:column;
+}
+body {
+  text-align: center;
+}
+.card {
+  background: rgb(251,160,160);
+  background: linear-gradient(90deg, rgba(251,160,160,1) 15%, rgba(226,226,235,1) 99%);
+  border-radius: 8px;
+  display: inline-block;
+  height: 60px;
+  margin: 8px;
+  position: relative;
+  width: 350px;
+}
+.card-button{
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.8rem;
+  width:  1.8rem;
+  position:absolute;
+  right:60px;
+  top:15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.card-button2{
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.8rem;
+  width:  1.8rem;
+  position:absolute;
+  right:20px;
+  top:15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.card-button:active{
+  background: rgb(255,216,216);
+  background: linear-gradient(90deg, rgba(255,216,216,1) 100%, rgba(226,226,235,1) 100%);
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.6rem;
+  width:  1.6rem;
+  position:absolute;
+  right:60px;
+  top:13px;
+}
+.card-button2:active{
+  background: rgb(255,216,216);
+  background: linear-gradient(90deg, rgba(255,216,216,1) 100%, rgba(226,226,235,1) 100%);
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.6rem;
+  width:  1.6rem;
+  position:absolute;
+  right:20px;
+  top:13px;
+}
+.button-img{
+  position: absolute;
+}
+.card-text{
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: small;
+  color: rgba(88, 85, 85, 0.658);
+  position:absolute;
+  left:10px;
+  top:20px;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.input{
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 40px;
+  border:  1px solid pink;
+  border-radius: 40px;
+  width: 80%;
 }
-
-.usermotto {
-  margin-top: 200px;
+.inputView{
+  position: fixed ;/*固定位置*/
+  bottom:0;
+  background-color: white;
+  width: 100%;
+}
+.btn1 {
+  background-color: beige;
+  color: white;
+  border-radius: 98rpx; 
+}
+.blank{
+  height: 50px;
+}
+.card-button3{
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.8rem;
+  width:  1.8rem;
+  position:absolute;
+  right:10px;
+  top:10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.card-button3:active{
+  background: rgb(255,216,216);
+  background: linear-gradient(90deg, rgba(255,216,216,1) 100%, rgba(226,226,235,1) 100%);
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.6rem;
+  width:  1.6rem;
+  position:absolute;
+  right:10px;
+  top:10px;
 }
