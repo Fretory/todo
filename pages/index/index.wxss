@@ -12,16 +12,16 @@ body {
   background: linear-gradient(90deg, rgba(251,160,160,1) 15%, rgba(226,226,235,1) 99%);
   border-radius: 8px;
   display: inline-block;
-  height: 60px;
+  height:70px;
   margin: 8px;
   position: relative;
-  width: 350px;
+  width: 95%;
 }
 .card-button{
   text-align: center;
   border-radius: 30rem;
-  height: 1.8rem;
-  width:  1.8rem;
+  height: 1.7rem;
+  width:  1.7rem;
   position:absolute;
   right:60px;
   top:15px;
@@ -30,8 +30,8 @@ body {
 .card-button2{
   text-align: center;
   border-radius: 30rem;
-  height: 1.8rem;
-  width:  1.8rem;
+  height: 1.7rem;
+  width:  1.7rem;
   position:absolute;
   right:20px;
   top:15px;
@@ -61,6 +61,10 @@ body {
 }
 .button-img{
   position: absolute;
+  left:20%;
+  top:20%;
+  height: 60%;
+  width:  60%;
 }
 .card-text{
   font-family: 'Times New Roman', Georgia, serif;
@@ -107,6 +111,7 @@ body {
   right:10px;
   top:10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: rgb(228, 222, 222);
 }
 .card-button3:active{
   background: rgb(255,216,216);

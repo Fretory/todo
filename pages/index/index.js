@@ -1,73 +1,78 @@
 //index.js
+var dbHelper = require("../../utils/dbOperations")
+const todoDB = wx.cloud.database().collection('todos')
 //获取应用实例
 const app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    newTask: "",
+    taskList: [],
+    pagesize:0
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
+    //查询
+  },
+  onShow: function () {
+    const that = this
+    var original = dbHelper.queryTodosUndone(app.globalData.openid)
+    var cast = Promise.resolve(original);
+    cast.then(function (value) {
+      //that.onLoad(value)
+      that.taskList = value
+      that.setData({
+        taskList: value,
+        pagesize: 0 
       })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
+      console.log(that.taskList)
+    });
+
+  },
+  btnHaveDone: function (e) {
+    console.log(e.currentTarget.dataset.id)
+
+  },
+  btnDelete: function (id) {},
+  btnAddCard: function () {
+    todoDB.add({
+      data: {
+        content: this.newTask,
+        done: false,
+        date: new Date().toLocaleString()
+      },
+      success: (res) => {
+        let result = res._id;
+        console.log(result)
+        this.onShow()
         this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
+              'newTask': ''
+           })
       }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
+    })
+},
+onReachBottom:function(){
+  let page = this.data.pagesize + 20
+
+  todoDB.where({
+    _openid: app.globalData.openid,
+    done: false
+  }).orderBy(
+    'date', 'desc'
+  ).limit(20).skip(page).get({
+    success: (result) => {
+      let old_data = this.data.taskList
+      let new_data = result.data
+      this.setData({
+        taskList : old_data.concat(new_data),
+        pagesize : page
       })
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
     })
-  },
-  onLoad: function(){
-    this.setData({
-        slideButtons: [{
-          text: '普通',
-          src: '/images/index/have_done.png', // icon的路径
-        },{
-          text: '普通',
-          extClass: 'test',
-          src: '/images/index/have_done.png', // icon的路径
-        },{
-          type: 'warn',
-          text: '警示',
-          extClass: 'test',
-            src: '/images/index/have_done.png', // icon的路径
-        }],
-    });
 },
-slideButtonTap(e) {
-    console.log('slide button tap', e.detail)
+bindInput(e) {
+  let dataset = e.detail.value
+  this.newTask = dataset
+  this.setData({
+    newTask: dataset
+  })
 }
 })
