@@ -55,8 +55,39 @@ let queryTodosDone = function (userOpenID) {
     })
   })
 }
+
+
+let changeTodo = function (itemID) {
+  todoDB.doc(itemID).get({
+    success: function (res) {
+      let isDone = !res.data.done
+      console.log(isDone)
+      console.log(isDone)
+      todoDB.doc(itemID).update({
+        data: {
+          done: isDone
+        },
+        success: function (res) {
+          console.log(res.stats.updated)
+        }
+      })
+    }
+  })
+}
+
+let deleteTodo = function (itemID) {
+  todoDB.doc(itemID).remove({
+    success: function (res) {
+      console.log(res.stats.removed)
+      //成功打印1
+    }
+  })
+}
+
 module.exports = {
   addNewTodo: addNewTodo,
   queryTodosUndone: queryTodosUndone,
-  queryTodosDone: queryTodosDone
+  queryTodosDone: queryTodosDone,
+  deleteTodo: deleteTodo,
+  changeTodo: changeTodo
 }
