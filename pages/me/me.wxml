@@ -1,8 +1,6 @@
 <!-- pages/me/me.wxml -->
+<mp-toptips msg="{{error}}" type="error" show="{{error}}"></mp-toptips>
 <view class="container">
-
-
-
 	<view wx:if="{{hasUserInfo == true}}" class="profile-info">
 		<image class="avatar" src="{{userInfo.avatarUrl}}"></image>
 		<p class="userinfo-nickname">{{userInfo.nickName}}</p>
@@ -44,13 +42,16 @@
 	</mp-dialog>
 </view>
 
+<mp-dialog title="确认删除" show="{{showTwoButtonDialog}}" bindbuttontap="tapDialogClearButton" buttons="{{buttons}}">
+	<view>test content</view>
+</mp-dialog>
 
 <view class="cell-container">
 	<mp-cells class="cells-container" ext-class="cells-container">
-		<mp-cell hover value="手机号" footer="1322222222" bindtap="test">
+		<mp-cell hover value="手机" footer="1322222222" bindtap="test">
 			<image hover slot="icon" src="../../images/me/tel.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
-		<mp-cell hover value="用户名" footer="{{userInfo.nickName}}">
+		<mp-cell hover value="昵称" footer="{{userInfo.nickName}}">
 			<image slot="icon" src="../../images/me/user.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="国家" footer="{{userInfo.country}}">
@@ -68,7 +69,9 @@
 		<mp-cell hover value="性别" footer="神秘人" wx:else>
 			<image slot="icon" src="../../images/me/gender-unknown.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
-
+		<mp-cell hover value="清空" footer="删除所有todo" bindtap="deleteAllTodos">
+			<image slot="icon" src="../../images/me/del.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+		</mp-cell>
 		<mp-cell hover value="分享" footer="分享给朋友" bindtap="egg">
 			<image slot="icon" src="../../images/me/share.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
@@ -78,4 +81,3 @@
 <view class="buttonContainer" wx:if="{{hasUserInfo == true}}">
 	<button type="warn" class="warnButton" bindtap="quitLogin">退出登录</button>
 </view>
-
