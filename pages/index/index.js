@@ -23,7 +23,7 @@ Page({
         taskList: value,
         pagesize: 0 
       })
-      console.log(that.taskList)
+      //console.log(that.taskList)
     });
 
   },

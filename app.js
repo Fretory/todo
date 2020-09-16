@@ -2,7 +2,7 @@
 App({
   onLaunch: function () {
     wx.cloud.init({                                                                             
-      env:'ftodo-2gwc7',
+      env:'competition-31da7',
       traceUser:true
     })
   },

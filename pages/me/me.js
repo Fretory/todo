@@ -22,7 +22,7 @@ Page({
     })
   },
   test: function () {
-    var original = dbHelper.queryTodosUndone(this.openid)
+    var original = dbHelper.queryTodosDone("0987653")
     var cast = Promise.resolve(original);
     cast.then(function (value) {
       console.log(value)
