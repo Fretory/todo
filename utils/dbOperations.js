@@ -21,20 +21,42 @@ let addNewTodo = function (todos) {
 }
 
 let queryTodosUndone = function (userOpenID) {
-  todoDB.where({
-    _openid: userOpenID,
-    done: false
-  }).get({
-    success: (result) => {
-      console.log(result)
-      Promise.resolve(result.data);
-    },
-    fail: () => {
-      reject("系统异常，请重试！")
-    }
+  return new Promise(function (resolve, reject) {
+    todoDB.where({
+      _openid: userOpenID,
+      done: false
+    }).orderBy(
+      'date', 'desc'
+    ).limit(100).get({
+      success: (result) => {
+        resolve(result.data);
+      },
+      fail: () => {
+        reject("系统异常，请重试！")
+      }
+    })
+  })
+}
+
+let queryTodosDone = function (userOpenID) {
+  return new Promise(function (resolve, reject) {
+    todoDB.where({
+      _openid: userOpenID,
+      done: true
+    }).orderBy(
+      'date', 'desc'
+    ).limit(100).get({
+      success: (result) => {
+        resolve(result.data);
+      },
+      fail: () => {
+        reject("系统异常，请重试！")
+      }
+    })
   })
 }
 module.exports = {
   addNewTodo: addNewTodo,
-  queryTodosUndone: queryTodosUndone
+  queryTodosUndone: queryTodosUndone,
+  queryTodosDone: queryTodosDone
 }
