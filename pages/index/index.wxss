@@ -72,7 +72,9 @@ body {
   color: rgba(88, 85, 85, 0.658);
   position:absolute;
   left:10px;
-  top:20px;
+  top:15px;
+  width: 70%;
+  height: 99%;
 }
 
 .card-2 {

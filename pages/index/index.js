@@ -28,10 +28,35 @@ Page({
 
   },
   btnHaveDone: function (e) {
-    console.log(e.currentTarget.dataset.id)
+    //console.log(e.currentTarget.dataset.id)
+    var that = this
+    todoDB.doc(e.currentTarget.dataset.id).get({
+      success: function (res) {
+        let isDone = !res.data.done
+        todoDB.doc(e.currentTarget.dataset.id).update({
+          data: {
+            done: isDone
+          },
+          success: (res) => {
+            //console.log(res.stats.updated)
+            that.onShow()
+          }
+        })
 
+      }
+    })        
+   
   },
-  btnDelete: function (id) {},
+  btnDelete: function (e) {
+    var that = this
+    todoDB.doc(e.currentTarget.dataset.id).remove({
+      success: function (res) {
+        console.log(res.stats.removed)
+        //成功打印1
+        that.onShow()
+      }
+    })
+  },
   btnAddCard: function () {
     todoDB.add({
       data: {
@@ -51,7 +76,6 @@ Page({
 },
 onReachBottom:function(){
   let page = this.data.pagesize + 20
-
   todoDB.where({
     _openid: app.globalData.openid,
     done: false

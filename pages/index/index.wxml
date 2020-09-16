@@ -6,7 +6,7 @@
         <view class="card-button" bindtap="btnHaveDone" data-id='{{item._id}}'>
             <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>
         </view>
-        <view class="card-button2" bindtap="btnDelete">
+        <view class="card-button2" bindtap="btnDelete" data-id='{{item._id}}'>
             <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
         </view>
       </view>
