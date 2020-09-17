@@ -8,8 +8,6 @@ body {
   text-align: center;
 }
 .card {
-  background: rgb(251,160,160);
-  background: linear-gradient(90deg, rgba(251,160,160,1) 15%, rgba(226,226,235,1) 99%);
   border-radius: 8px;
   display: inline-block;
   height:80px;
@@ -24,40 +22,44 @@ body {
   width:  1.7rem;
   position:absolute;
   right:60px;
-  top:15px;
+  top:20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: rgb(99,231,80);
+  background: linear-gradient(90deg, rgba(99,231,80,0.48643891150210083) 99%, rgba(123,254,112,1) 100%);
 }
 .card-button2{
+  background: rgb(231,80,80);
+  background: linear-gradient(90deg, rgba(231,80,80,1) 99%, rgba(254,137,112,1) 22%);
   text-align: center;
   border-radius: 30rem;
   height: 1.7rem;
   width:  1.7rem;
   position:absolute;
   right:20px;
-  top:15px;
+  top:20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 .card-button:active{
-  background: rgb(255,216,216);
-  background: linear-gradient(90deg, rgba(255,216,216,1) 100%, rgba(226,226,235,1) 100%);
+  background: rgb(99,231,80);
+  background: linear-gradient(90deg, rgba(99,231,80,0.48643891150210083) 39%, rgba(123,254,112,1) 100%);
   text-align: center;
   border-radius: 30rem;
   height: 1.6rem;
   width:  1.6rem;
   position:absolute;
   right:60px;
-  top:13px;
+  top:17px;
 }
 .card-button2:active{
-  background: rgb(255,216,216);
-  background: linear-gradient(90deg, rgba(255,216,216,1) 100%, rgba(226,226,235,1) 100%);
+  background: rgb(231,80,80);
+  background: linear-gradient(90deg, rgba(231,80,80,1) 52%, rgba(254,137,112,1) 100%);
   text-align: center;
   border-radius: 30rem;
   height: 1.6rem;
   width:  1.6rem;
   position:absolute;
   right:20px;
-  top:13px;
+  top:17px;
 }
 .button-img{
   position: absolute;
@@ -68,12 +70,12 @@ body {
 }
 .card-text{
   font-family: 'Times New Roman', Georgia, serif;
-  font-size: small;
-  color: rgba(88, 85, 85, 0.658);
+  font-size: medium;
+  color: rgba(247, 242, 242, 0.658);
   position:absolute;
   left:10px;
-  top:15px;
-  width: 70%;
+  top:23px;
+  width: 60%;
   height: 99%;
 }
 
