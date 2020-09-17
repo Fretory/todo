@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="page-body">
     <form catchsubmit="formSubmit" catchreset="formReset">
-      <view class="card card-2" wx:for="{{taskList}}" wx:for-item="item">
+      <view class="card card-2" wx:for="{{taskList}}" wx:for-item="item"  wx:key="key" wx:for-index="key" style="background:{{randomColorArr[key]}}" bindtap="btnGetInfo">
         <text class="card-text">{{item.content}}</text>
         <view class="card-button" bindtap="btnHaveDone" data-id='{{item._id}}'>
             <cover-image src = "/images/index/have_done.png" class="button-img" ></cover-image>

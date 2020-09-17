@@ -7,10 +7,51 @@ Page({
   data: {
     newTask: "",
     taskList: [],
-    pagesize:0
+    pagesize:0,
+
+    colorArr:[
+      "linear-gradient(90deg, rgba(231,228,80,0.9766349899334734) 2%, rgba(123,254,112,1) 100%);",
+      "linear-gradient(90deg, rgba(231,80,80,0.9766349899334734) 2%, rgba(255,255,255,1) 100%);",
+      "linear-gradient(90deg, rgba(208,201,4,0.9766349899334734) 2%, rgba(255,255,255,1) 100%);",
+      "linear-gradient(90deg, rgba(4,192,208,0.9766349899334734) 2%, rgba(255,255,255,1) 100%);",
+      "linear-gradient(90deg, rgba(245,100,136,0.9766349899334734) 2%, rgba(255,255,255,1) 100%);",
+      "linear-gradient(90deg, rgba(245,244,100,0.9766349899334734) 2%, rgba(255,255,255,1) 100%);",
+      "linear-gradient(90deg, rgba(146,103,174,0.9766349899334734) 5%, rgba(255,255,255,1) 100%);",
+    ],
+    randomColorArr: []
   },
   onLoad: function () {
-    //查询
+    const that = this
+    var original = dbHelper.queryTodosUndone(app.globalData.openid)
+    var cast = Promise.resolve(original);
+    cast.then(function (value) {
+      //that.onLoad(value)
+      that.taskList = value
+      that.setData({
+        taskList: value,
+        pagesize: 0 
+      })
+      let labLen = that.data.taskList.length,
+      colorArr = that.data.colorArr,
+      colorLen = colorArr.length,
+      ranlen = that.data.randomColorArr.length,
+      randomColorArr = that.data.randomColorArr;
+      labLen = labLen - ranlen
+  //判断执行
+  do{
+    let random = colorArr[Math.floor(Math.random() * colorLen)];
+    randomColorArr.unshift(random);
+    labLen--;
+  } while (labLen > 0)
+  
+  that.setData({ 
+    randomColorArr: randomColorArr
+  });
+    });
+
+
+  },
+  btnGetInfo:function(){
   },
   onShow: function () {
     const that = this
@@ -23,9 +64,8 @@ Page({
         taskList: value,
         pagesize: 0 
       })
-      console.log(that.taskList)
+      
     });
-
   },
   btnHaveDone: function (e) {
     //console.log(e.currentTarget.dataset.id)
@@ -71,6 +111,7 @@ Page({
         this.setData({
               'newTask': ''
            })
+           this.onLoad()
       }
     })
 },

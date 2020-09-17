@@ -11,7 +11,7 @@ let addNewTodo = function (todos) {
       success: (res) => {
         let result = res._id;
         console.log(result)
-        Promise.resolve(result);
+        Promise.resolve(result.data);
       },
       fail: () => {
         Promise.reject("系统异常，请重试！")
@@ -27,7 +27,7 @@ let queryTodosUndone = function (userOpenID) {
       done: false
     }).orderBy(
       'date', 'desc'
-    ).limit(100).get({
+    ).limit(20).get({
       success: (result) => {
         resolve(result.data);
       },
@@ -61,8 +61,6 @@ let changeTodo = function (itemID) {
   todoDB.doc(itemID).get({
     success: function (res) {
       let isDone = !res.data.done
-      console.log(isDone)
-      console.log(isDone)
       todoDB.doc(itemID).update({
         data: {
           done: isDone
