@@ -48,31 +48,31 @@
 <view class="cell-container">
 	<mp-cells class="cells-container" ext-class="cells-container">
 		<mp-cell hover value="手机" footer="1322222222" >
-			<image hover slot="icon" src="../../images/me/tel.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			<image hover slot="icon" src="cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/me/tel.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="昵称" footer="{{userInfo.nickName}}">
-			<image slot="icon" src="../../images/me/user.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			<image slot="icon" src="cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/me/user.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="国家" footer="{{userInfo.country}}">
-			<image slot="icon" src="../../images/me/earth.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			<image slot="icon" src="cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/me/earth.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="省份" footer="{{userInfo.province}}">
-			<image slot="icon" src="../../images/me/position.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			<image slot="icon" src="cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/me/position.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="性别" footer="男" wx:if="{{userInfo.gender==1}}">
-			<image slot="icon" src="../../images/me/gender-male.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			<image slot="icon" src="cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/me/gender-male.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="性别" footer="女" wx:elif="{{userInfo.gender==2}}">
-			<image slot="icon" src="../../images/me/gender-famale.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			<image slot="icon" src="cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/me/gender-famale.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="性别" footer="神秘人" wx:else>
-			<image slot="icon" src="../../images/me/gender-unknown.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			<image slot="icon" src="cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/me/gender-unknown.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="清空" footer="删除所有todo" bindtap="deleteAllTodos">
-			<image slot="icon" src="../../images/me/del.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			<image slot="icon" src="cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/me/del.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="分享" footer="分享给朋友" bindtap="egg">
-			<image slot="icon" src="../../images/me/share.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+			<image slot="icon" src="cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/me/share.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 	</mp-cells>
 </view>

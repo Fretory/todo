@@ -5,7 +5,7 @@
       <view class="card card-2" wx:for="{{taskList}}" wx:for-item="item"  wx:key="key" wx:for-index="key" style="background:{{randomColorArr[key]}}" >
         <text class="card-text" bindtap="btnGetInfo"  data-date='{{item.date}}' data-content='{{item.content}}' >{{item.content}}</text>
         <view class="card-button2" bindtap="btnDelete" data-id='{{item._id}}'>
-            <cover-image src = "/images/index/delete.png" class  ="button-img" ></cover-image>
+            <cover-image src = "cloud://ftodo-2gwc7.6674-ftodo-2gwc7-1303120739/images/index/delete.png" class  ="button-img" ></cover-image>
         </view>
        <!-- <mp-dialog title="具体信息" show="{{dialogShow}}"  buttons="{{oneButton}}" bindbuttontap="btnCloseInfo">
         <view >{{date}}</view>
