@@ -29,20 +29,6 @@ Page({
       url: '../egg/egg'
     })
   },
-  test: function () {
-
-<<<<<<< HEAD
-
-=======
-    var original = dbHelper.queryTodosDone("0987653")
-    var cast = Promise.resolve(original);
-    cast.then(function (value) {
-      console.log(value)
-      //这里放异步的请求
-      //例如增加一个记录
-    });
->>>>>>> index
-  },
   onGotUsertInfo: function (e) {
     const that = this
     wx.cloud.callFunction({

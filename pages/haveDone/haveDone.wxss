@@ -1,1 +1,131 @@
-/* pages/haveDone/haveDone.wxss */
+/**index.wxss**/
+
+.page-body
+{
+  flex-direction:column;
+}
+body {
+  text-align: center;
+}
+.card {
+  border-radius: 8px;
+  display: inline-block;
+  height:80px;
+  margin: 8px;
+  position: relative;
+  width: 95%;
+}
+.card-button{
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.7rem;
+  width:  1.7rem;
+  position:absolute;
+  right:60px;
+  top:20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: rgb(99,231,80);
+  background: linear-gradient(90deg, rgba(99,231,80,0.48643891150210083) 99%, rgba(123,254,112,1) 100%);
+}
+.card-button2{
+  background: rgb(231,80,80);
+  background: linear-gradient(90deg, rgba(231,80,80,1) 99%, rgba(254,137,112,1) 22%);
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.7rem;
+  width:  1.7rem;
+  position:absolute;
+  right:20px;
+  top:20px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.card-button:active{
+  background: rgb(99,231,80);
+  background: linear-gradient(90deg, rgba(99,231,80,0.48643891150210083) 39%, rgba(123,254,112,1) 100%);
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.6rem;
+  width:  1.6rem;
+  position:absolute;
+  right:60px;
+  top:17px;
+}
+.card-button2:active{
+  background: rgb(231,80,80);
+  background: linear-gradient(90deg, rgba(231,80,80,1) 52%, rgba(254,137,112,1) 100%);
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.6rem;
+  width:  1.6rem;
+  position:absolute;
+  right:20px;
+  top:17px;
+}
+.button-img{
+  position: absolute;
+  left:20%;
+  top:20%;
+  height: 60%;
+  width:  60%;
+}
+.card-text{
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: medium;
+  color: rgba(0, 0, 0, 0.658);
+  position:absolute;
+  left:10px;
+  top:23px;
+  width: 60%;
+  height: 99%;
+  text-decoration:line-through;
+}
+
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.input{
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 40px;
+  border:  1px solid pink;
+  border-radius: 40px;
+  width: 80%;
+}
+.inputView{
+  position: fixed ;/*固定位置*/
+  bottom:0;
+  background-color: white;
+  width: 100%;
+}
+.btn1 {
+  background-color: beige;
+  color: white;
+  border-radius: 98rpx; 
+}
+.blank{
+  height: 50px;
+}
+.card-button3{
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.8rem;
+  width:  1.8rem;
+  position:absolute;
+  right:10px;
+  top:10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  background: rgb(228, 222, 222);
+}
+.card-button3:active{
+  background: rgb(255,216,216);
+  background: linear-gradient(90deg, rgba(255,216,216,1) 100%, rgba(226,226,235,1) 100%);
+  text-align: center;
+  border-radius: 30rem;
+  height: 1.6rem;
+  width:  1.6rem;
+  position:absolute;
+  right:10px;
+  top:10px;
+}

@@ -7,7 +7,11 @@ Page({
   data: {
     newTask: "",
     taskList: [],
-    pagesize:0,
+    pagesize:0, 
+    dialogShow:false,
+    oneButton: [{text: '确定'}],
+    content:"",
+    date:"",
 
     colorArr:[
       "linear-gradient(90deg, rgba(231,228,80,0.9766349899334734) 2%, rgba(123,254,112,1) 100%);",
@@ -21,6 +25,42 @@ Page({
     randomColorArr: []
   },
   onLoad: function () {
+    const that = this
+      let labLen = that.data.taskList.length,
+      colorArr = that.data.colorArr,
+      colorLen = colorArr.length,
+      ranlen = that.data.randomColorArr.length,
+      randomColorArr = that.data.randomColorArr;
+      labLen = labLen - ranlen
+  //判断执行
+  do{
+    let random = colorArr[Math.floor(Math.random() * colorLen)];
+    randomColorArr.unshift(random);
+    labLen--;
+  } while (labLen > 0)
+  
+  that.setData({ 
+    randomColorArr: randomColorArr
+  });
+
+
+  },
+
+  btnCloseInfo:function(){
+    this.setData({
+      dialogShow: false
+  })
+  },
+  btnGetInfo:function(e){
+    this.setData({
+      dialogShow: true,
+      content: e.currentTarget.dataset.content,
+      date : e.currentTarget.dataset.date
+  })
+},
+  btnGetInfo:function(){
+  },
+  onShow: function () {
     const that = this
     var original = dbHelper.queryTodosUndone(app.globalData.openid)
     var cast = Promise.resolve(original);
@@ -48,24 +88,6 @@ Page({
     randomColorArr: randomColorArr
   });
     });
-
-
-  },
-  btnGetInfo:function(){
-  },
-  onShow: function () {
-    const that = this
-    var original = dbHelper.queryTodosUndone(app.globalData.openid)
-    var cast = Promise.resolve(original);
-    cast.then(function (value) {
-      //that.onLoad(value)
-      that.taskList = value
-      that.setData({
-        taskList: value,
-        pagesize: 0 
-      })
-      
-    });
   },
   btnHaveDone: function (e) {
     //console.log(e.currentTarget.dataset.id)
@@ -79,7 +101,16 @@ Page({
           },
           success: (res) => {
             //console.log(res.stats.updated)
-            that.onShow()
+            var original = dbHelper.queryTodosUndone(app.globalData.openid)
+            var cast = Promise.resolve(original);
+            cast.then(function (value) {
+              //that.onLoad(value)
+              that.taskList = value
+              that.setData({
+                taskList: value,
+                pagesize: 0 
+              })
+            });
           }
         })
 
@@ -111,7 +142,16 @@ Page({
         this.setData({
               'newTask': ''
            })
-           this.onLoad()
+           var original = dbHelper.queryTodosUndone(app.globalData.openid)
+           var cast = Promise.resolve(original);
+           cast.then(function (value) {
+             //that.onLoad(value)
+             that.taskList = value
+             that.setData({
+               taskList: value,
+               pagesize: 0 
+             })
+           });
       }
     })
 },
@@ -130,6 +170,7 @@ onReachBottom:function(){
         taskList : old_data.concat(new_data),
         pagesize : page
       })
+      this.onLoad()
     }
     })
 },
