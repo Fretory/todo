@@ -43,7 +43,6 @@
 </view>
 
 <mp-dialog title="确认删除" show="{{showTwoButtonDialog}}" bindbuttontap="tapDialogClearButton" buttons="{{buttons}}">
-	<view>test content</view>
 </mp-dialog>
 
 <view class="cell-container">
