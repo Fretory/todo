@@ -91,12 +91,16 @@ Page({
     })
   },
   deleteAllTodos: function (e) {
-    if (this.openid == '') {
-      return
+    if (!this.openid) {
+      this.setData({
+        showTwoButtonDialog: false
+      })
+    }else{
+      this.setData({
+        showTwoButtonDialog: true
+      })
     }
-    this.setData({
-      showTwoButtonDialog: true
-    })
+
   },
   tapDialogClearButton: function (e) {
     var that=this
