@@ -12,6 +12,7 @@ Page({
     oneButton: [{text: '确定'}],
     content:"",
     date:"",
+    openid:"",
 
     colorArr:[
       "linear-gradient(90deg, rgba(231,228,80,0.9766349899334734) 2%, rgba(123,254,112,1) 100%);",
@@ -61,6 +62,9 @@ Page({
   btnGetInfo:function(){
   },
   onShow: function () {
+    this.setData({
+      openid:app.globalData.openid
+    })
     const that = this
     var original = dbHelper.queryTodosUndone(app.globalData.openid)
     var cast = Promise.resolve(original);
@@ -71,22 +75,6 @@ Page({
         taskList: value,
         pagesize: 0 
       })
-      let labLen = that.data.taskList.length,
-      colorArr = that.data.colorArr,
-      colorLen = colorArr.length,
-      ranlen = that.data.randomColorArr.length,
-      randomColorArr = that.data.randomColorArr;
-      labLen = labLen - ranlen
-  //判断执行
-  do{
-    let random = colorArr[Math.floor(Math.random() * colorLen)];
-    randomColorArr.unshift(random);
-    labLen--;
-  } while (labLen > 0)
-  
-  that.setData({ 
-    randomColorArr: randomColorArr
-  });
     });
   },
   btnHaveDone: function (e) {

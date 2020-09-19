@@ -12,6 +12,7 @@ Page({
     oneButton: [{text: '确定'}],
     content:"",
     date:"",
+    openid:"",
 
     colorArr:[
       "linear-gradient(90deg, rgba(231,228,80,0.9766349899334734) 2%, rgba(123,254,112,1) 100%);",
@@ -57,6 +58,9 @@ Page({
 
   },
   onShow: function () {
+    this.setData({
+      openid:app.globalData.openid
+    })
     const that = this
     var original = dbHelper.queryTodosDone(app.globalData.openid)
     var cast = Promise.resolve(original);
