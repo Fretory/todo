@@ -48,7 +48,7 @@
 
 <view class="cell-container">
 	<mp-cells class="cells-container" ext-class="cells-container">
-		<mp-cell hover value="手机" footer="1322222222" bindtap="test">
+		<mp-cell hover value="手机" footer="1322222222" >
 			<image hover slot="icon" src="../../images/me/tel.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
 		</mp-cell>
 		<mp-cell hover value="昵称" footer="{{userInfo.nickName}}">
