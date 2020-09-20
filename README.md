@@ -23,3 +23,6 @@ mvvm模式
 https://gitee.com/fretory/todo
 ## 作品体验二维码
 ![](https://mmbiz.qpic.cn/mmbiz_jpg/NEw3ZiaAb2Szziac4UXCnTD4LkD2uAickicHNo04Eia4gcV8BrR6MZRClLPUGXueIsADbOHsuwvQP9VKtqTQmlGnjXQ/0?wx_fmt=jpeg)
+
+## 部署教程
+[部署教程地址](./deployment.md)
