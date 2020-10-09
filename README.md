@@ -1,5 +1,8 @@
 ## 应用场景
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0ec11bc9c4ef4bbdb573869efcd405c5)](https://app.codacy.com/gh/Fretory/todo?utm_source=github.com&utm_medium=referral&utm_content=Fretory/todo&utm_campaign=Badge_Grade)
+
+
 我们的这个todolist应用场景很佛系,比如说，你想写下一个todo的时候，你就突然想到有我们这个十分简陋但是确实还稍微能看的过去的小程序，当你记下一条todo时，你点击发送，虽然没有动画，没有awesome的惊叹，但是你会发现，它确确实实的被发送到你的已做里面去了。和别的作品相比，我们没有提醒功能，但是这也有几率被我们加入进去的(大概).当你点击完成，你会发现，欸，怎么我得todo不见了？你会发现，他放在了已经完成里面！是不是很神奇！这时候你就可以删除他了。但是，如果你不想一个个删除怎么办？那我有什么办法，只能惯着你了，在个人中心界面，有一键删除！  
 以上就是我们的FTodoList的应用场景
 
